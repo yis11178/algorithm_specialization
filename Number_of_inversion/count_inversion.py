@@ -1,6 +1,13 @@
 import numpy as np
 import sys
 
+'''
+FIXME:
+Some problems with this algorithms: 
+e.g. to count number of inversion for array 1, 5, 4, 2, 3
+the algorithm returns 5
+but actually only 4 inversions are needed. 
+'''
 
 def count_inversion(a):
 
@@ -11,6 +18,8 @@ def count_inversion(a):
         j = 0
         inversion = 0
         for k in range(l):
+            # Append all the remaining of an array if
+            # another one goes into end
             if i == len(left):
                 sorted_a += right[j:]
                 break
