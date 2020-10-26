@@ -1,1 +1,3 @@
-# coursera_algorithm_specialization
+# Algorithm_specialization
+
+This repository implements the representative algorithms
