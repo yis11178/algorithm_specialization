@@ -2,11 +2,13 @@ import numpy as np
 import sys
 
 '''
-FIXME:
-Some problems with this algorithms: 
-e.g. to count number of inversion for array 1, 5, 4, 2, 3
-the algorithm returns 5
-but actually only 4 inversions are needed. 
+The implementation of counting number of inversion using
+Merge Sort algorithm. 
+This example is a special case where the numbers are supposed 
+to be equal to their position. In this case, a simple method 
+of adding the absolute value of difference between value 
+and position of number can be applied to count the numebr 
+of inversion
 '''
 
 def count_inversion(a):
