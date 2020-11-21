@@ -35,3 +35,26 @@
       merge u and v into a single vertex
       remove self-loops
     return cut represented by final 2 vertices
+  
+  ## Graph search
+  
+  ### Goal:
+    1. Find everything findable given a starting vertex
+    2. Don't explore anything twice
+  ### Generic algorithm
+    Given graph G, vertex s
+    - Initially s explore, all other vertices unexplored
+    - While possible:
+        choose edge (u, v) with u explored and v unexplored
+        mark v explored
+  ### Breadth first search (BFS)
+    O(M+N) time using a queue (FIFO)
+    - Explore nodes in "layers"
+    - Can compute shortest paths
+    - Can compute connected components of an undirected graph
+  ## Depth first search (DFS)
+    O(M+N) time using a stack (LIFO)
+    Recursive algorithm
+    - Explore aggressively like a maze, only backtrack when necessary
+    - Compute topological orderingof directed acyclic graph
+    - Compute connected components of directed graph
