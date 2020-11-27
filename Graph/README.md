@@ -52,9 +52,26 @@
     - Explore nodes in "layers"
     - Can compute shortest paths
     - Can compute connected components of an undirected graph
-  ## Depth first search (DFS)
+  ### Depth first search (DFS)
     O(M+N) time using a stack (LIFO)
     Recursive algorithm
     - Explore aggressively like a maze, only backtrack when necessary
     - Compute topological orderingof directed acyclic graph
     - Compute connected components of directed graph
+  ### Strongly Connected Components
+  
+  ### Find Shortest Path - Dijkstra's algorithm
+    Each edge is associated with a length which is not necessarily 1. 
+    Length of edge must not be negative (Causing the algorithm to fail)
+    Find the shortest path for every vertex in the graph from a starting vertex s
+    Algorithm:
+        X[s]: Vertices that has been processed so far
+        A[s]: Length of shortest path for processed vertices
+        B[s]: Shortest path for processed vertices
+        While X does not cover all vertices:
+            among all edges (v,w) with v in X and w not in X
+            pick w that minimizes A[v]+length(v,w)
+            add this w to X
+            add shortest path length of w to A
+            add shortest path of w to B
+        
