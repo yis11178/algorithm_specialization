@@ -71,3 +71,77 @@ A container for objects have keys
   1. Tree
     
   2. Array
+  
+## Sorted Array -- Static
+
+### Basic Operations
+
+  1. Search
+  
+  Running time: O(logn)
+  
+  2. Select
+  
+  Running time: O(1)
+  
+  3. Rank (number of keys less than or equal to given value)
+  
+  Running time: O(logn)
+  
+## Binary Search Trees -- Dynamic 
+
+  Support all operations of sorted array
+  
+  Also faster insertion and deletions
+  
+  Height (longest root-leaf path) can be anywhere between log_2n (perfectly balanced) and n (worst case)
+  
+### Strucuture
+
+  Exactly one node per key
+  
+  Each node contains:
+    
+    Left child pointer
+    right child pointer
+    parent pointer
+
+### Property
+
+  All left child node is less than the node
+  
+  All right child node is larger than the node
+  
+### Basic Operations
+
+  1. Search
+  
+  Running time: O(logn)
+  
+  2. Select
+  
+  Running time: O(n)
+  
+  3. Rank (number of keys less than or equal to given value)
+  
+  Running time: O(logn)
+  
+  4. Insertion:
+  
+  Running time: o(logn)
+  
+  5. Deletion:
+  
+  Running time: o(logn)
+  
+  **cases**
+  
+    1. Leaf node: just delete
+    
+    2. Node has 1 child: delete and connect parent with child
+    
+    3. Node has 2 children: 
+        find predecessor (the largest one that less than node)
+        swap node with predecessor
+        problem reduced to case2
+  
