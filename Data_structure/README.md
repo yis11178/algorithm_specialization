@@ -145,3 +145,87 @@ A container for objects have keys
         swap node with predecessor
         problem reduced to case2
   
+## Hash Table
+
+Maintain a (possibly evolving) set of stuff (transaction, IP address, etc)
+
+### Basic Operations 
+a 
+Using a 'key', run in constant time
+
+  1. Insert
+  
+  2. Delete
+  
+  3. Lookup: check for a particular record
+  
+### Application
+
+1. De-Duplication
+
+    * Given: a 'stream' of objects
+    * Goal: keep track of unique objects
+    
+2. The 2-SUM problem
+
+    * Given; unsorted array of integers, target sum T
+    * Goal: determin whether there is pair that sums to T
+
+### Implementation 
+
+Setup: Universe U (all IP address, all names, all chessboard configuration, etc)
+
+Goal: Want to maintain evolving set S (generally reasonable size) in U 
+
+    array based
+    Use hash function to map the value of key to position in array
+    
+Problem: Collision
+
+    distinct x,y in U, h(x) = h(y)
+    
+Solution:
+
+* (separate) Chaining
+    
+    instead of array, use linked list (content of each position makes up of a list)
+    Given a key/object, perform Insert/Delete/Lookup in the list in A[h(x)]
+    
+* Open addressing
+
+    A sequence of hash function h1(x), h2(x), h3(x), ...
+    if h1(x) occupied, try h2(x) and so on
+    until an open position if found
+    
+## Bloom Filter
+
+Faster Insert and Lookup
+
+Comparison with Hash table:
+
+    Pros: more space efficient
+    Cons: 1. can't store an associated object (only remember what is seen and what is not)
+          2. No deletion
+          3. small false positive probability
+
+### Application
+
+1. Early spell checkers
+
+2. List of forbidden password
+
+3. Network Routers
+
+### Ingredients
+
+1. array of n bits (only 0/1) (n/|s|=number of bits per object in dataset S)
+
+2. k hash functions
+
+Insert(x):
+    for i in range(k):
+        set A[hi(x)] = 1 (Regardless of whether bit has been set to 1)
+        
+Lookup(x): 
+    Return True if A[hi(x)] = 1
+          
