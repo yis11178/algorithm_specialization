@@ -65,3 +65,27 @@
           add v to X
   
   * Kruskal's Algorithm
+  
+        sort edges in order of increasing cost
+        T = null set
+        for i = 1 to M: (1 being cheapest and M being most expensive)
+          if T and i form no cycles (linear running time with naive graph search)
+          add i to T
+        return T
+        
+  * Union-find Data structure 
+  
+    - Partition of a set of objects
+    - Used to accelerate Kruskal's algorithm
+    
+    - Operations 
+      
+      find(x) : return name of group that x belongs to
+      union(ci, cj) : fuse group ci and cj into a single one 
+    
+    - Invariants
+      
+      each vertex points to the 'leader' of its component
+      
+    
+    
